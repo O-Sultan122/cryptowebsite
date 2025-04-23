@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      padding: 80px 10%;
+      max-width: 1000px;
+      margin: auto;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      color: #ff960b;
+      margin-bottom: 30px;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 24px #ff960b44;
+    }
+
+    nav {
+      width: 100%;
+      padding: 20px 10%;
+      display: flex;
+      align-items: center;
+    }
+
+    nav img.logo {
+      width: 50px;
+    }
+
+    nav ul {
+      flex: 1;
+      text-align: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid #fff;
+      padding: 10px 25px;
+      border-radius: 25px;
+    }
+
+    nav .btn {
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <img src="images/logo.png" class="logo" />
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="top-crypto.html">Top Crypto</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+    </ul>
+    <a href="login.html" class="btn">LOGIN</a>
+  </nav>
+
+  <div class="container">
+    <h1>About Us</h1>
+    <div class="about-text">
+      <p>
+        Welcome to <strong>Top Crypto Compare</strong> — your go-to destination for tracking and comparing the world’s leading cryptocurrencies in real time. 
+      </p>
+      <p>
+        Our mission is simple: make crypto data clear, accessible, and useful. Whether you’re a beginner or a seasoned investor, we give you the tools to stay on top of market trends and performance.
+      </p>
+      <p>
+        Built using real-time data from the CoinGecko API and a touch of modern design, our platform is constantly evolving to bring you a sleek, responsive experience. From sparkline charts to interactive price tracking, it’s all at your fingertips.
+      </p>
+      <p>
+        Thanks for being here. 🚀
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

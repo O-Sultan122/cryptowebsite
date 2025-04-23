@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>login form</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<style>
+   
+
+   body {
+    margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #2c2c40, #1a1a2e, #2c2c40, #1a1a2e);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+   form {
+    border: 3px solid #f1f1f1;
+    max-width: 400px;
+  margin: 100px auto;
+  background-color: #1f1f2e;
+  border-radius: 10px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+   input[type=text], input[type=password] {
+    width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2c2c40;
+  color: white;
+  font-size: 14px;
+}
+button {
+    width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2c2c40;
+  color: white;
+  font-size: 14px;
+}
+button:hover {
+  opacity: 0.8;
+  background-color: #e67f00
+}
+
+.input-box {
+    position: relative;
+  margin: 20px 0;
+}
+.input-box input{
+    width: 100%;
+  padding: 16px 12px 12px;
+  font-size: 16px;
+  background: #2c2c40;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  color: white;
+  outline: none;
+}
+.input-box label {
+    position: absolute;
+  top: 50%;
+  left: 12px;
+  color: #aaa;
+  transform: translateY(-50%);
+  transition: 0.2s ease all;
+  pointer-events: none;
+  font-size: 16px;
+}
+.input-box img{
+    width: 24px;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: 8px;
+  font-size: 12px;
+  color: #ff960b;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logincontainer {
+    padding: 30px;
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent */
+  border-radius: 12px;
+  box-shadow: 0 0 12px #ff960b, 0 0 24px #ff960b66, 0 0 48px #ff960b33;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  width: 100%;
+  max-width: 450px;
+}
+.logincontainer:hover {
+  box-shadow: 0 0 16px #ff960b, 0 0 32px #ff960b88, 0 0 64px #ff960b44;
+  transition: box-shadow 0.3s ease;
+}
+.strength-meter {
+  margin-top: 8px;
+  width: 50%;
+}
+
+#strength-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: #ccc;
+  transition: width 0.3s ease;
+}
+
+#strength-text {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+</style>
+    </head>
+    <body>
+<div class="container">
+    <nav>
+        <img src="images/logo.png" class="logo" href="index.html"/>
+        
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="top-crypto.html">Top Crypto</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+        </ul>
+        
+        <a href="login.html" class="btn login-btn">LOGIN</a>
+      </nav>
+      <form action="/action_page.php" method="post">
+        <div class="logincontainer">
+      
+          <div class="input-box">
+            <input type="text" id="username" name="username" placeholder=" " required />
+            <label for="username">Username</label>
+          </div>
+      
+          <div class="input-box">
+            <input type="password" id="password" placeholder=" " required />
+            <label for="password">Password</label>
+            <img src="images/eye-close.png" id="eyeicon" />
+          </div>
+          <div class="strength-meter">
+            <div id="strength-bar"></div>
+            <p id="strength-text"></p>
+          </div>
+          
+          <button type="submit">Login</button>
+        </div>
+      </form>
+      
+      
+    </div>
+  
+    <script>
+        let eyeicon = document.getElementById("eyeicon");
+        let password = document.getElementById("password");
+      
+        eyeicon.onclick = function(){
+            if(password.type =="password"){
+                password.type="text" ;
+                eyeicon.src = "images/eye-open.png";
+            }else{
+                password.type="password";
+                eyeicon.src = "images/eye-close.png";
+            }
+        }
+      
+        const strengthBar = document.getElementById("strength-bar");
+        const strengthText = document.getElementById("strength-text");
+      
+        password.addEventListener("input", function () {
+          const val = password.value;
+          let strength = 0;
+      
+          if (val.length > 5) strength++;
+          if (val.match(/[A-Z]/)) strength++;
+          if (val.match(/[0-9]/)) strength++;
+          if (val.match(/[^A-Za-z0-9]/)) strength++;
+      
+          switch (strength) {
+            case 0:
+              strengthBar.style.width = "0%";
+              strengthBar.style.background = "#ccc";
+              strengthText.textContent = "";
+              break;
+            case 1:
+              strengthBar.style.width = "33%";
+              strengthBar.style.background = "#dc2626";
+              strengthText.textContent = "Weak";
+              strengthText.style.color = "#dc2626";
+              break;
+            case 2:
+              strengthBar.style.width = "66%";
+              strengthBar.style.background = "#fbbf24";
+              strengthText.textContent = "Medium";
+              strengthText.style.color = "#fbbf24";
+              break;
+            case 3:
+            case 4:
+              strengthBar.style.width = "100%";
+              strengthBar.style.background = "#16a34a";
+              strengthText.textContent = "Strong";
+              strengthText.style.color = "#16a34a";
+              break;
+          }
+        });
+      </script>
+      
+    </body>
+</html>

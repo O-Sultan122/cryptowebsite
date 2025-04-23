@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>top crypto compare</title>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<style>
+   
+   .coin {
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #f9fafb;
+  transition: box-shadow 0.3s ease;
+}
+.coin:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.coin img {
+  width: 50px;
+  height: 50px;
+}
+.coin-info {
+  min-width: 200px;
+  flex: 0 0 300px;
+}
+.coin h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+.coin p {
+  margin: 4px 0;
+}
+canvas {
+  width: 100% !important;
+  height: 40px !important;
+  display: block;
+}
+.sparkline-container {
+  max-width: 300px;
+  height: 40px;
+  margin-left: auto;
+  flex: 1;
+}
+.btn, .coin {
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: #e67f00;
+}
+
+</style>
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo" href="index.html"/>
+                
+                <ul class="nav-links">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="top-crypto.html">Top Crypto</a></li>
+                  <li><a href="about-us.html">About Us</a></li>
+                </ul>
+                
+                <a href="login.html" class="btn login-btn">LOGIN</a>
+              </nav>
+              
+        
+
+    
+        <div id="app"></div>
+        <h1>Cryptocurrency Prices</h1>
+        <div class="row">
+          
+            <p>
+              This page indexes the top 10 cryptocurrencies by market cap (how
+              much the sum of all coins is collectively worth), and gives you an easy
+              way to compare cryptocurrency performance and rank over the last week.
+            </p>
+          
+        </div>
+        <!-- Container to display the coins -->
+        <div id="coins-container">
+        <div class="sparkline-container">
+            <canvas id="sparkline-${index}"></canvas>
+          </div>
+        </div>
+        <!-- Include Axios (you can download it or link it via CDN) -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        
+          
+        </div>
+    </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        
+        <script src="app.js"></script>
+       
+    </body>
+</html>
